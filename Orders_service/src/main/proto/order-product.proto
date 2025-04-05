@@ -1,0 +1,40 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+
+package com.orders_service.entities;
+
+enum product_state{
+  AVAILABLE = 0;
+  OUT_OF_STOCK = 1;
+}
+
+enum order_state{
+  CREATED = 0;
+  PROCESSING = 1;
+  FAILED = 2;
+}
+
+message product{
+  int32 id = 1;
+//  warehouse quantity
+  int32 qte = 2;
+  product_state state = 3;
+}
+
+
+message order{
+  int32 id = 1;
+  int32 product_id = 2;
+  int32 product_qte = 3;
+  order_state state = 4;
+}
+
+service orderService{
+  rpc createOrder (order) returns (product);
+
+}
+
+service productService{
+  rpc sendProduct (product) returns (order);
+}
