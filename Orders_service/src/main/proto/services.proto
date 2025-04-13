@@ -1,0 +1,21 @@
+// services.proto
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "com.microservices.grpc.order_product.services";
+
+package order_product;
+
+import "entities.proto";
+import "dto.proto";
+
+// Service definitions
+service OrderService {
+  rpc CreateOrder(CreateOrderRequest) returns (CreateOrderResponse);
+  rpc UpdateOrderStatus(Order) returns (Order);
+}
+
+service ProductService {
+  rpc GetProductById(GetProductByIdRequest) returns (GetProductByIdResponse);
+  rpc UpdateProduct(UpdateProductRequest) returns (UpdateProductResponse);
+}
