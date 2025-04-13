@@ -1,4 +1,3 @@
-// entities.proto
 syntax = "proto3";
 
 option java_multiple_files = true;
@@ -6,7 +5,6 @@ option java_package = "com.microservices.grpc.order_product.entities";
 
 package order_product;
 
-// Entity-related enums
 enum ProductState {
   AVAILABLE = 0;
   OUT_OF_STOCK = 1;
@@ -18,7 +16,6 @@ enum OrderState {
   FAILED = 2;
 }
 
-// Entity definitions
 message Product {
   int32 id = 1;
   int32 quantity = 2;
