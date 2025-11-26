@@ -1,10 +1,3 @@
-Usmaexe: After analysing the codebase that is dedicated to implement the new create order transaction It uses gRPC for communication, Spring for dependency injection, and a repository to interact with the database. The service logs key actions and errors for debugging.
-
-give me a readme file to add to my vcs so anyone can use the project especially instruction abbout application.properties
-
-GitHub Copilot: Here is a `README.md` file you can use for your project:
-
-```markdown
 # Orders Service
 
 This project is a microservice for managing orders in a distributed system. It uses **gRPC** for communication, **Spring Boot** for dependency injection and application management, and **JPA** for database interactions. The service logs key actions and errors for debugging purposes.
@@ -33,7 +26,6 @@ cd grpc-lab/Orders_service
 ### 2. Configure `application.properties`
 The application requires a configuration file to connect to the database and set up gRPC communication. Update the `src/main/resources/application.properties` file with your environment-specific details:
 
-```properties
 # Application name
 spring.application.name=Orders_service
 
@@ -64,7 +56,7 @@ spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.PostgreSQLDialect
 logging.level.com.microservices=INFO
 logging.level.org.hibernate.SQL=DEBUG
 logging.level.org.hibernate.type.descriptor.sql.BasicBinder=TRACE
-```
+
 
 Replace the placeholders (`<DB_HOST>`, `<DB_PORT>`, `<DB_NAME>`, `<DB_USERNAME>`, `<DB_PASSWORD>`) with your PostgreSQL database details.
 
